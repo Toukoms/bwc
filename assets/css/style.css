@@ -1,0 +1,166 @@
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --primary-color: #2F3C4F;
+    --secondary-color: #506E86;
+    --accent-color: #DE703B;
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 1rem;
+}
+
+button {
+    position: relative;
+    padding: .75rem;
+    border: 1px dashed #fff;
+    border-radius: 99px;
+    background-color: transparent;
+    color: #fff;
+    font-size: 1rem;
+    font-style: italic;
+    text-align: center;
+    overflow: hidden;
+    cursor: pointer;
+    transition: color 0.5s ease-in-out;
+    transition-duration: 0.3s;
+    font-family: Arial, Helvetica, sans-serif;
+    z-index: 2;
+}
+
+button:hover {
+    color: var(--primary-color);
+}
+
+button::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 100%;
+    content: "";
+    height: 100%;
+    background-color: #fff;
+    transition: all 0.3s ease-in-out;
+    z-index: -1;
+}
+
+button:hover::before {
+    right: 0;
+}
+
+button.square {
+    border-radius: 0;
+}
+
+button.inv {
+    background-color: #fff;
+    color: var(--primary-color);
+}
+
+button.inv:hover {
+    color: #fff;
+}
+
+button.inv::before {
+    background-color: var(--primary-color);
+    left: 100%;
+    right: 0;
+}
+
+button.inv:hover::before {
+    left: 0;
+}
+
+html, body {
+    background-color: var(--primary-color);
+    color: #fff;
+    font-size: 16px;
+    font-family: Inter, sans-serif;
+    width: 100vw;
+    height: 100vh;
+}
+
+html {
+    overflow-x: hidden;
+    scroll-snap-type: y mandatory;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 1.5rem;
+    padding-bottom: 1rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+}
+
+header div.container {
+    position: relative;
+    width: 96%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: .5rem;
+    border-radius: 99px;
+    z-index: 999;
+}
+
+header span {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.25rem;
+    text-transform: uppercase;
+    color: #ffffffce;
+    font-weight: 200;
+    z-index: 999;
+}
+
+header span b {
+    color: #fff;
+}
+
+header nav {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    padding-left: 2rem;
+}
+
+header nav a {
+    position: relative;
+}
+
+header nav a.active {
+    font-weight: bold;
+}
+
+header nav a::before {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 0px;
+    height: 2px;
+    border-radius: 99px;
+    background-color: #fff;
+    width: 0;
+    transition: all 0.6s ease-in-out;
+}
+
+header nav a:hover::before {
+    width: 100%;
+}
+

@@ -1,0 +1,183 @@
+main {
+    width: 100%;
+    height: 100vh;
+}
+
+section {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    scroll-snap-align: start;
+}
+
+section#hero {
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    gap: 3rem;
+}
+
+section#hero h1 {
+    font-size: 4rem;
+    font-weight: 600;
+    line-height: 1.25;
+}
+
+section#hero .buttons {
+    display: flex;
+    gap: 2rem;
+}
+
+section#hero .buttons button {
+    min-width: 12rem;
+    font-style: normal;
+    font-size: 1.25rem;
+    white-space: nowrap;
+}
+
+section#hero .buttons button.btn-1 {
+    font-weight: 600;
+}
+
+section#about {
+    background-color: var(--accent-color);
+    align-items: start;
+}
+
+section#about aside {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    gap: 0.25rem;
+    width: 50.5%;
+    padding-inline: 6rem;
+    position: relative;
+    z-index: 1;
+}
+
+section#about aside::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -2;
+    background-image: url("https://img.freepik.com/premium-photo/man-is-sitting-table-focusing-his-laptop-screen-engaged-online-work-studying-digital-nomad-working-his-laptop-from-tropical-beach-ai-generated_538213-23372.jpg?w=740");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: left;
+}
+
+section#about aside::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    z-index: -1;
+    background-color: #000;
+    opacity: 0.6;
+    backdrop-filter: blur(3px) brightness(0.5);
+}
+
+section#about aside h2 {
+    font-size: 3rem;
+    font-weight: 600;
+    white-space: nowrap;
+    margin-bottom: 0.25rem;
+    transition: all 0.2s ease 0.3s;
+}
+
+section#about aside h2 span {
+    color: var(--accent-color);
+    font-weight: 800;
+}
+
+section#about aside h3 {
+    font-weight: 500;
+    font-size: 1.75rem;
+    color: #ffffffb0;
+    transition: all 0.2s ease 0.6s;
+}
+
+section#about aside h3 span {
+    color: #fff;
+    font-style: italic;
+    font-weight: 600;
+}
+
+section#about aside p {
+    color: #ffffffea;
+    margin-top: 1.75rem;
+    font-size: 0.75rem;
+    line-height: 1.45;
+    letter-spacing: 2px;
+    word-spacing: 1.25px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    transition: all 0.2s ease 0.9s;
+}
+
+section#about div#skills {
+    width: 53%;
+    height: 100%;
+    padding-inline: 6rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: center;
+}
+
+section#about div#skills h3 {
+    font-size: 1.75rem;
+    font-weight: 500;
+    margin-bottom: 0.25rem;
+    color: var(--primary-color);
+}
+
+section#about div#skills h3 span {
+    color: #000000b1;
+    font-weight: 600;
+}
+
+section#about div#skills ul {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(200px, 280px));
+    gap: 0px 10px;
+    padding: 0px;
+    margin: 20px 0px 0px;
+    overflow: hidden;
+    list-style: none;
+}
+
+section#about div#skills ul li {
+    position: relative;
+    margin-bottom: 10px;
+    padding-left: 20px;
+    font-family: monospace, sans-serif;
+    font-size: 1rem;
+}
+
+section#about div#skills ul li::before {
+    content: "▹";
+    position: absolute;
+    top: 4px;
+    left: 0px;
+    color: #fff;
+    font-size: 0.75rem;
+    line-height: 12px;
+}
+
+section#experiences {
+    background-color: var(--quaternary-color);
+}
+
+section#works {
+    background-color: var(--secondary-color);
+}
