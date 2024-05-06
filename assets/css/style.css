@@ -18,6 +18,26 @@ a {
     font-size: 1rem;
 }
 
+html, body {
+    background-color: var(--primary-color);
+    color: #fff;
+    font-size: 16px;
+    font-family: Inter, sans-serif;
+    width: 100vw;
+    height: 100vh;
+}
+
+body {
+    position: relative;
+}
+
+html {
+    overflow-y: hidden;
+    overflow-x: hidden;
+    scroll-snap-type: y mandatory;
+}
+
+
 button {
     position: relative;
     padding: .75rem;
@@ -77,20 +97,6 @@ button.inv::before {
 
 button.inv:hover::before {
     left: 0;
-}
-
-html, body {
-    background-color: var(--primary-color);
-    color: #fff;
-    font-size: 16px;
-    font-family: Inter, sans-serif;
-    width: 100vw;
-    height: 100vh;
-}
-
-html {
-    overflow-x: hidden;
-    scroll-snap-type: y mandatory;
 }
 
 header {
@@ -162,5 +168,55 @@ header nav a::before {
 
 header nav a:hover::before {
     width: 100%;
+}
+
+.loading {
+    display: none;
+}
+
+.loading.active {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--primary-color);
+    z-index: 99999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loading.active svg {
+    animation: rotate 1s linear infinite;
+}
+
+.loading.active span {
+    font-size: 2rem;
+    font-style: italic;
+    margin-left: 1.25rem;
+}
+
+/* Animation */
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
