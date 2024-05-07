@@ -8,7 +8,8 @@ section {
     height: 100vh;
     display: flex;
     scroll-snap-align: start;
-    margin-bottom: 1rem;
+    margin-bottom: 3rem;
+    box-shadow: 0px 2px 12px 6px #0000003f;
 }
 
 section#hero {
@@ -17,6 +18,8 @@ section#hero {
     flex-direction: column;
     text-align: center;
     gap: 3rem;
+    background-color: var(--primary-color);
+    color: #fff;
 }
 
 section#hero h1 {
@@ -25,9 +28,19 @@ section#hero h1 {
     line-height: 1.25;
 }
 
+section#hero.animate h1 {
+    animation: slide-up 1s linear forwards, fade-in 1s linear forwards;
+    animation-delay: 0.3s;
+}
+
 section#hero .buttons {
     display: flex;
     gap: 2rem;
+}
+
+section#hero.animate .buttons {
+    animation: slide-up 1s linear forwards, fade-in 1s linear forwards;
+    animation-delay: 0.35s;
 }
 
 section#hero .buttons button {
@@ -294,7 +307,7 @@ section#contact div.container form button:focus {
 
 section#contact div.container form button::before {
     content: none;
-}   
+}
 
 footer {
     position: fixed;
@@ -330,6 +343,9 @@ footer {
 }
 
 #contact_email span {
+    color: #fff;
+    font-family: monospace, sans-serif;
+    letter-spacing: 1.25;
     writing-mode: vertical-lr;
     text-orientation: mixed;
     transform: rotate(180deg);

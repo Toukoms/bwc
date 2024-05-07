@@ -10,35 +10,16 @@ window.addEventListener("load", () => {
   html.style.overflowY = "scroll";
 });
 
-// window.addEventListener("scroll", () => {
-//   const about = document.getElementsByClassName("about")[0];
-//   const contact = document.getElementsByClassName("contact")[0];
-//   const hero = document.getElementsByClassName("hero")[0];
-
-//   if (640 < window.scrollY && window.scrollY < 1280) {
-//     hero.classList.remove("active");
-//     about.classList.add("active");
-//     contact.classList.remove("active");
-//   } else if (window.scrollY > 1280) {
-//     hero.classList.remove("active");
-//     about.classList.remove("active");
-//     contact.classList.add("active");
-//   } else {
-//     hero.classList.add("active");
-//     about.classList.remove("active");
-//     contact.classList.remove("active");
-//   }
-// })
-
 const sections = document.querySelectorAll("section");
 const links = document.querySelectorAll("header nav a");
 
-console.log(sections);
 
 const observer = new IntersectionObserver((entries) => {
   console.log(entries);
-  entries.forEach((entry, i) => {
-    if (entry.intersectionRatio > 0.9) {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      sections.forEach((section) => { section.classList.remove("animate") })
+      entry.target.classList.add("animate")
       links.forEach((link) => {
         link.classList.remove("active");
         if (link.classList.contains(entry.target.id)) {

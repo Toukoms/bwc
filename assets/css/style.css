@@ -1,4 +1,6 @@
-*, *::before, *::after {
+*,
+*::before,
+*::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -6,9 +8,9 @@
 }
 
 :root {
-    --primary-color: #2F3C4F;
-    --secondary-color: #506E86;
-    --accent-color: #DE703B;
+    --primary-color: #2f3c4f;
+    --secondary-color: #506e86;
+    --accent-color: #de703b;
 }
 
 a {
@@ -18,9 +20,8 @@ a {
     font-size: 1rem;
 }
 
-html, body {
-    background-color: var(--primary-color);
-    color: #fff;
+html,
+body {
     font-size: 16px;
     font-family: Inter, sans-serif;
     width: 100vw;
@@ -28,6 +29,8 @@ html, body {
 }
 
 body {
+    background-color: #58585879;
+    color: #fff;
     position: relative;
 }
 
@@ -37,10 +40,9 @@ html {
     scroll-snap-type: y mandatory;
 }
 
-
 button {
     position: relative;
-    padding: .75rem;
+    padding: 0.75rem;
     border: 1px dashed #fff;
     border-radius: 99px;
     background-color: transparent;
@@ -118,7 +120,7 @@ header div.container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: .5rem;
+    padding: 0.5rem;
     border-radius: 99px;
     z-index: 999;
 }
@@ -202,21 +204,32 @@ header nav a:hover::before {
 
 /* Animation */
 
-@keyframes fadeIn {
-    0% {
+@keyframes fade-in {
+    from {
         opacity: 0;
     }
-    100% {
+
+    to {
         opacity: 1;
     }
 }
 
 @keyframes rotate {
-    0% {
+    from {
         transform: rotate(0deg);
     }
-    100% {
+
+    to {
         transform: rotate(360deg);
     }
 }
 
+@keyframes slide-up {
+    from {
+        transform: translateY(12rem);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
