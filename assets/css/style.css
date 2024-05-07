@@ -233,3 +233,12 @@ header nav a:hover::before {
         transform: translateY(0);
     }
 }
+
+@keyframes slide-left {
+    from {
+        transform: translateX(-12rem);
+    }
+    to {
+        transform: translateX(0);
+    }
+}

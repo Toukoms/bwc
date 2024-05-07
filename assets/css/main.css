@@ -28,25 +28,16 @@ section#hero h1 {
     line-height: 1.25;
 }
 
-section#hero.animate h1 {
-    animation: slide-up 1s linear forwards, fade-in 1s linear forwards;
-    animation-delay: 0.3s;
-}
-
 section#hero .buttons {
     display: flex;
     gap: 2rem;
-}
-
-section#hero.animate .buttons {
-    animation: slide-up 1s linear forwards, fade-in 1s linear forwards;
-    animation-delay: 0.35s;
+    opacity: 0;
 }
 
 section#hero .buttons button {
     min-width: 12rem;
     font-style: normal;
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     white-space: nowrap;
 }
 
@@ -99,6 +90,7 @@ section#about aside::after {
 }
 
 section#about aside h2 {
+    opacity: 0;
     font-size: 3rem;
     font-weight: 600;
     white-space: nowrap;
@@ -112,6 +104,7 @@ section#about aside h2 span {
 }
 
 section#about aside h3 {
+    opacity: 0;
     font-weight: 500;
     font-size: 1.75rem;
     color: #ffffffb0;
@@ -139,15 +132,15 @@ section#about aside p {
 }
 
 section#about aside p :nth-child(1) {
-    animation-delay: 0s;
+    animation-delay: 1.25s;
 }
 
 section#about aside p :nth-child(2) {
-    animation-delay: 1s;
+    animation-delay: 1.5s;
 }
 
 section#about aside p :nth-child(3) {
-    animation-delay: 2s;
+    animation-delay: 1.75s;
 }
 
 section#about div#skills {
@@ -158,6 +151,12 @@ section#about div#skills {
     flex-direction: column;
     gap: 1rem;
     justify-content: center;
+    opacity: 0;
+}
+
+section#about.animate div#skills {
+    animation: fade-in 1.25s ease-in forwards;
+    animation-delay: 0.3s;
 }
 
 section#about div#skills h3 {
@@ -222,6 +221,7 @@ section#contact div.container {
 
 section#contact div.container div.description {
     width: 50%;
+    opacity: 0;
 }
 
 section#contact div.container div.description h1 {
@@ -247,6 +247,7 @@ section#contact div.container form {
     flex-direction: column;
     gap: 1rem;
     width: 50%;
+    opacity: 0;
 }
 
 section#contact div.container form input {
@@ -396,3 +397,42 @@ footer {
     background-color: #fff;
     color: var(--primary-color);
 }
+
+/* Animation */
+section#hero.animate h1 {
+    animation: fade-in 3s ease-in forwards;
+    animation-delay: 0.3s;
+}
+
+section#hero.animate .buttons {
+    animation: slide-up 1s ease forwards, fade-in 2s ease-in forwards;
+    animation-delay: 0.3s, 0.6s;
+}
+
+section#contact.animate div.container form {
+    animation: fade-in 1.5s ease-in forwards;
+    animation-delay: 0.6s;
+}
+
+section#contact.animate div.container div.description {
+    animation: fade-in 2s ease forwards;
+    animation-delay: 0.3s;
+}
+
+section#about.animate aside h2, section#about.animate aside h3 {
+    animation: fade-in 2s linear forwards, slide-left 1s ease-in forwards;
+    animation-delay: 0.3s, 0;
+}
+
+section#about.animate aside h3 {
+    animation-delay: 0.6s, 0.3s;
+}
+
+section#about.animate p span {
+    opacity: 0;
+}
+
+section#about.animate p span {
+    animation: fade-in 1.2s ease-in forwards;
+}
+
