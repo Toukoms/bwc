@@ -8,28 +8,29 @@ window.addEventListener("load", () => {
   const html = document.getElementsByTagName("html")[0];
   loading.classList.remove("active");
   html.style.overflowY = "scroll";
-});
 
-const sections = document.querySelectorAll("section");
-const links = document.querySelectorAll("header nav a");
+  const sections = document.querySelectorAll("section");
+  const links = document.querySelectorAll("header nav a");
 
-
-const observer = new IntersectionObserver((entries) => {
-  console.log(entries);
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      sections.forEach((section) => { section.classList.remove("animate") })
-      entry.target.classList.add("animate")
-      links.forEach((link) => {
-        link.classList.remove("active");
-        if (link.classList.contains(entry.target.id)) {
-          link.classList.add("active");
-        }
-      });
-    }
+  const observer = new IntersectionObserver((entries) => {
+    console.log(entries);
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        sections.forEach((section) => {
+          section.classList.remove("animate");
+        });
+        entry.target.classList.add("animate");
+        links.forEach((link) => {
+          link.classList.remove("active");
+          if (link.classList.contains(entry.target.id)) {
+            link.classList.add("active");
+          }
+        });
+      }
+    });
   });
-});
 
-sections.forEach((section) => {
-  observer.observe(section);
+  sections.forEach((section) => {
+    observer.observe(section);
+  });
 });

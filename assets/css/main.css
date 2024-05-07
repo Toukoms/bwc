@@ -26,6 +26,7 @@ section#hero h1 {
     font-size: 4rem;
     font-weight: 600;
     line-height: 1.25;
+    opacity: 0;
 }
 
 section#hero .buttons {
@@ -129,18 +130,6 @@ section#about aside p {
     gap: 0.45rem;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     transition: all 0.2s ease 0.9s;
-}
-
-section#about aside p :nth-child(1) {
-    animation-delay: 1.25s;
-}
-
-section#about aside p :nth-child(2) {
-    animation-delay: 1.5s;
-}
-
-section#about aside p :nth-child(3) {
-    animation-delay: 1.75s;
 }
 
 section#about div#skills {
@@ -399,9 +388,10 @@ footer {
 }
 
 /* Animation */
+
 section#hero.animate h1 {
-    animation: fade-in 3s ease-in forwards;
-    animation-delay: 0.3s;
+    animation: fade-in 2s ease-in forwards;
+    animation-delay: 0.1s;
 }
 
 section#hero.animate .buttons {
@@ -433,6 +423,20 @@ section#about.animate p span {
 }
 
 section#about.animate p span {
-    animation: fade-in 1.2s ease-in forwards;
+    animation: fade-in 1s ease-in forwards;
+    animation-delay: 0.8s;
+}
+
+
+section#about.animate aside p :nth-child(1) {
+    animation-delay: 1s;
+}
+
+section#about.animate aside p :nth-child(2) {
+    animation-delay: 1.5s;
+}
+
+section#about.animate aside p :nth-child(3) {
+    animation-delay: 2s;
 }
 

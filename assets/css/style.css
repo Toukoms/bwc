@@ -178,7 +178,7 @@ header nav a:hover::before {
 
 .loading.active {
     display: block;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
