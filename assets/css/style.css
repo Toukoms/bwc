@@ -1,3 +1,9 @@
+
+@font-face {
+    font-family: Inter;
+    src: url(../fonts/Inter.ttf);
+}
+
 *,
 *::before,
 *::after {
@@ -23,7 +29,7 @@ a {
 html,
 body {
     font-size: 16px;
-    font-family: Inter, sans-serif;
+    font-family: Inter, monospace;
     width: 100vw;
     height: 100vh;
 }
