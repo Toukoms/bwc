@@ -1,5 +1,5 @@
-function redirectTo(path) {
-  window.location.href = "http://localhost:5500" + path;
+function redirectTo(link) {
+  window.location.href = link;
 }
 
 // Animation loading when page on load
